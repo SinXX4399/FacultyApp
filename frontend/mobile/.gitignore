@@ -1,0 +1,47 @@
+# Misc
+*.class
+*.log
+*.swp
+.DS_Store
+.history
+.svn/
+.atom/
+.build/
+.buildlog/
+migrate_working_dir/
+
+# IntelliJ / IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Python
+venv/
+.venv/
+.env
+*.pyc
+**/__pycache__/
+
+# Node
+node_modules/
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+coverage/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+
+# Android
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Symbolication
+app.*.symbols
+app.*.map.json

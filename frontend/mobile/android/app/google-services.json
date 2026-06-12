@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "82801091027",
+    "project_id": "faculty-app-ee827",
+    "storage_bucket": "faculty-app-ee827.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82801091027:android:3e8cab95d68088592e4f26",
+        "android_client_info": {
+          "package_name": "com.pranaya.facultyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbSgjOqMNW3tFxi0txLjKpAFW1pk0t7go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
