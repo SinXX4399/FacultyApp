@@ -6,10 +6,10 @@ export const connectorConfig = {
   location: 'asia-southeast1'
 };
 
-export function createBranch(dcOrVarsOrOptions, varsOrOptions, options) {
+export function createMajor(dcOrVarsOrOptions, varsOrOptions, options) {
   const { dc: dcInstance, vars: inputVars, options: inputOpts} = validateAdminArgs(connectorConfig, dcOrVarsOrOptions, varsOrOptions, options, true, true);
   dcInstance.useGen(true);
-  return dcInstance.executeMutation('CreateBranch', inputVars, inputOpts);
+  return dcInstance.executeMutation('CreateMajor', inputVars, inputOpts);
 }
 
 export function createFaculty(dcOrVarsOrOptions, varsOrOptions, options) {

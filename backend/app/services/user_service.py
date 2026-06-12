@@ -3,7 +3,7 @@ from app.models import UserModel
 from app.auth.dependencies import hash_password
 from app.schemas.User import UserCreate
 from fastapi import HTTPException
-from app.models import  BranchModel
+from app.models import  MajorModel, FacultyModel, DepartmentModel
 def create_user_service(db: Session, user: UserCreate):
     user_data = user.model_dump(exclude_unset=True)
 
@@ -30,9 +30,9 @@ def create_user_service(db: Session, user: UserCreate):
     user_data["username"] = username
 
     # 🔥 OPTIONAL (recommended)
-    # auto-set faculty from branch
-    branch = db.query(BranchModel).get(user_data["branch_id"])
-    user_data["faculty_id"] = branch.faculty_id
+    # auto-set faculty from major
+    major = db.query(MajorModel).get(user_data["major_id"])
+    user_data["faculty_id"] = major.faculty_id
 
     new_user = UserModel(**user_data)
 
@@ -81,8 +81,8 @@ def get_user_by_name_service(db: Session, name: str):
 def get_user_by_year_service(db: Session, year: int):
     return db.query(UserModel).filter(UserModel.year == year).all()
 
-def get_user_by_branch_service(db: Session, branch: str):
-    return db.query(UserModel).filter(UserModel.branch == branch).all()
+def get_user_by_major_service(db: Session, major: str):
+    return db.query(UserModel).filter(UserModel.major == major).all()
 
 def get_user_by_faculty_service(db: Session, faculty: str):
     return db.query(UserModel).filter(UserModel.faculty == faculty).all()

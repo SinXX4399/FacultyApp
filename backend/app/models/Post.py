@@ -17,7 +17,7 @@ class PostModel(Base):
 
     status = Column(String, default="open")
 
-    owner_id = Column(String, ForeignKey("users.user_id"))
+    owner_id = Column(Integer, ForeignKey("users.id"))
 
     # 🔥 relationship
-    owner = relationship("UserModel", back_populates="posts",passive_deletes=True)
+    owner = relationship("UserModel", back_populates="post",passive_deletes=True)

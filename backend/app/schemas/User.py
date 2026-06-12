@@ -18,7 +18,7 @@ class UserCreate(BaseModel):
     email: str = Field(..., max_length=100)
     department: int = Field(..., gt=0)
     phonenumber: str= Field(..., max_length=10)
-    branch_id:int = Field(..., gt=0)
+    major_id:int = Field(..., gt=0)
     faculty_id:int = Field(..., gt=0)
     year: int = Field(..., ge=1, le=6)
     role_id: int = Field(..., gt=0)
@@ -33,7 +33,7 @@ class UserResponse(BaseModel):
     username: str
     name: str
     sname: str
-    branch_id: int
+    major_id: int
     faculty_id: int
     department: int
     year: int
@@ -60,7 +60,7 @@ class UserUpdate(BaseModel):
     email: Optional[str] = Field(None, max_length=100)
     phonenumber: Optional[str] = Field(None, max_length=10)
     department_id: Optional[int] = None
-    branch_id: Optional[int] = None
+    major_id: Optional[int] = None
     faculty_id: Optional[int] = None
     year: Optional[int] = Field(None, ge=1, le=6)
     updated_at: Optional[datetime] = Field(default_factory=datetime.utcnow)

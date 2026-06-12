@@ -8,16 +8,16 @@ export type Int64String = string;
 export type DateString = string;
 
 
-export interface Branch_Key {
+export interface Major_Key {
   id: UUIDString;
-  __typename?: 'Branch_Key';
+  __typename?: 'Major_Key';
 }
 
-export interface CreateBranchData {
-  branch_insert: Branch_Key;
+export interface CreateMajorData {
+  major_insert:Major_Key;
 }
 
-export interface CreateBranchVariables {
+export interface CreateMajorVariables {
   name: string;
   code: string;
   facultyId: UUIDString;
@@ -46,7 +46,7 @@ export interface CreateUserVariables {
   firebaseUid: string;
   year: number;
   facultyId: UUIDString;
-  branchId: UUIDString;
+  majorId: UUIDString;
   departmentId: UUIDString;
   roleId: UUIDString;
 }
@@ -85,11 +85,11 @@ export interface GetUsersData {
       name: string;
       code: string;
     } & Faculty_Key;
-      branch: {
+      major: {
         id: UUIDString;
         name: string;
         code: string;
-      } & Branch_Key;
+      } & Major_Key;
         department: {
           id: UUIDString;
           name: string;
@@ -136,7 +136,7 @@ export interface UpdateUserVariables {
   email?: string | null;
   year?: number | null;
   facultyId?: UUIDString | null;
-  branchId?: UUIDString | null;
+  majorId?: UUIDString | null;
   departmentId?: UUIDString | null;
 }
 
@@ -145,10 +145,10 @@ export interface User_Key {
   __typename?: 'User_Key';
 }
 
-/** Generated Node Admin SDK operation action function for the 'CreateBranch' Mutation. Allow users to execute without passing in DataConnect. */
-export function createBranch(dc: DataConnect, vars: CreateBranchVariables, options?: OperationOptions): Promise<ExecuteOperationResponse<CreateBranchData>>;
-/** Generated Node Admin SDK operation action function for the 'CreateBranch' Mutation. Allow users to pass in custom DataConnect instances. */
-export function createBranch(vars: CreateBranchVariables, options?: OperationOptions): Promise<ExecuteOperationResponse<CreateBranchData>>;
+/** Generated Node Admin SDK operation action function for the 'CreateMajor' Mutation. Allow users to execute without passing in DataConnect. */
+export function createMajor(dc: DataConnect, vars: CreateMajorVariables, options?: OperationOptions): Promise<ExecuteOperationResponse<CreateMajorData>>;
+/** Generated Node Admin SDK operation action function for the 'CreateMajor' Mutation. Allow users to pass in custom DataConnect instances. */
+export function createMajor(vars: CreateMajorVariables, options?: OperationOptions): Promise<ExecuteOperationResponse<CreateMajorData>>;
 
 /** Generated Node Admin SDK operation action function for the 'CreateFaculty' Mutation. Allow users to execute without passing in DataConnect. */
 export function createFaculty(dc: DataConnect, vars: CreateFacultyVariables, options?: OperationOptions): Promise<ExecuteOperationResponse<CreateFacultyData>>;

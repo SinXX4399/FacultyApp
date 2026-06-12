@@ -10,7 +10,7 @@ from ..auth.dependencies import verify_password, hash_password, get_current_user
 from ..auth.roles import require_role
 from ..schemas.User import UserCreate, UserResponse, UserLogin, UserUpdate
 from ..schemas.Token import TokenResponse
-from ..services.user_service import create_user_service, get_user_by_id_service, get_all_users_service, delete_user_service, update_user_service, get_user_by_name_service, get_user_by_year_service, get_user_by_branch_service, get_user_by_faculty_service
+from ..services.user_service import create_user_service, get_user_by_id_service, get_all_users_service, delete_user_service, update_user_service, get_user_by_name_service, get_user_by_year_service, get_user_by_major_service, get_user_by_faculty_service
 from ..services.user_service import get_user_by_username_service
 router = APIRouter(
     prefix="/users",
@@ -83,14 +83,14 @@ def get_user_by_year(
 ):
     return get_user_by_year_service(db, year)
 
-# Get users by branch
-@router.get("/search/branch", response_model=List[UserResponse])
-def get_user_by_branch(
-    branch: str = Query(..., min_length=1),
+# Get users by major
+@router.get("/search/major", response_model=List[UserResponse])
+def get_user_by_major(
+    major: str = Query(..., min_length=1),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user)
 ):
-    return get_user_by_branch_service(db, branch)
+    return get_user_by_major_service(db, major)
 
 # Get users by faculty
 @router.get("/search/faculty", response_model=List[UserResponse])

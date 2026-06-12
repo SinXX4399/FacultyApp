@@ -1,15 +1,15 @@
 part of 'generated.dart';
 
-class CreateBranchVariablesBuilder {
+class CreateMajorVariablesBuilder {
   String name;
   String code;
   String facultyId;
 
   final FirebaseDataConnect _dataConnect;
-  CreateBranchVariablesBuilder(this._dataConnect, {required  this.name,required  this.code,required  this.facultyId,});
-  Deserializer<CreateBranchData> dataDeserializer = (dynamic json)  => CreateBranchData.fromJson(jsonDecode(json));
-  Serializer<CreateBranchVariables> varsSerializer = (CreateBranchVariables vars) => jsonEncode(vars.toJson());
-  Future<OperationResult<CreateBranchData, CreateBranchVariables>> execute() {
+  CreateMajorVariablesBuilder(this._dataConnect, {required  this.name,required  this.code,required  this.facultyId,});
+  Deserializer<CreateMajorData> dataDeserializer = (dynamic json)  => CreateMajorData.fromJson(jsonDecode(json));
+  Serializer<CreateMajorVariables> varsSerializer = (CreateBranchVariables vars) => jsonEncode(vars.toJson());
+  Future<OperationResult<CreateBranchData, CreateMajorhVariables>> execute() {
     return ref().execute();
   }
 

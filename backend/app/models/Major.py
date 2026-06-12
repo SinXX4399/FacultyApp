@@ -4,8 +4,8 @@ from sqlalchemy.sql import func
 from ..database import Base
 
 
-class BranchModel(Base):
-    __tablename__ = "branches"
+class MajorModel(Base):
+    __tablename__ = "majors"
 
     id = Column(Integer, primary_key=True, index=True)
 
@@ -17,10 +17,10 @@ class BranchModel(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # 🔥 relationships
-    faculty = relationship("FacultyModel", back_populates="branches")
+    faculty = relationship("FacultyModel", back_populates="major")
 
     users = relationship(
         "UserModel",
-        back_populates="branch",
+        back_populates="major",
         cascade="all, delete-orphan"
     )

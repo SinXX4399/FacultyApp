@@ -177,7 +177,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
             const SizedBox(height: 10),
 
             buildDropdown("Faculty"),
-            buildDropdown("Branch"),
+            buildDropdown("Major"),
             buildDropdown("Student ID"),
             buildDropdown("Group"),
 

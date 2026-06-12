@@ -15,8 +15,8 @@ class FacultyModel(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # 🔥 relationship
-    branches = relationship(
-        "BranchModel",
+    majors = relationship(
+        "MajorModel",
         back_populates="faculty",
         cascade="all, delete-orphan"
     )

@@ -7,12 +7,12 @@ const connectorConfig = {
 };
 exports.connectorConfig = connectorConfig;
 
-function createBranch(dcOrVarsOrOptions, varsOrOptions, options) {
+function createMajor(dcOrVarsOrOptions, varsOrOptions, options) {
   const { dc: dcInstance, vars: inputVars, options: inputOpts} = validateAdminArgs(connectorConfig, dcOrVarsOrOptions, varsOrOptions, options, true, true);
   dcInstance.useGen(true);
-  return dcInstance.executeMutation('CreateBranch', inputVars, inputOpts);
+  return dcInstance.executeMutation('CreateMajor', inputVars, inputOpts);
 }
-exports.createBranch = createBranch;
+exports.createMajor = createMajor;
 
 function createFaculty(dcOrVarsOrOptions, varsOrOptions, options) {
   const { dc: dcInstance, vars: inputVars, options: inputOpts} = validateAdminArgs(connectorConfig, dcOrVarsOrOptions, varsOrOptions, options, true, true);

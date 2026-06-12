@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey, T
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from ..database import Base
-from .Branch import BranchModel
+from .Major import MajorModel
 from .Faculty import FacultyModel
 from .RolePermission import Role, role_permissions, Permission
 from .Department import DepartmentModel
@@ -34,7 +34,7 @@ class UserModel(Base):
     
     # ✅ FOREIGN KEYS
     department_id= Column(Integer, ForeignKey("departments.id"), nullable=False)
-    branch_id = Column(Integer, ForeignKey("branches.id"), nullable=False)
+    major_id = Column(Integer, ForeignKey("majors.id"), nullable=False)
     faculty_id = Column(Integer, ForeignKey("faculties.id"), nullable=False)
     role_id = Column(Integer, ForeignKey("roles.id"), nullable=False)
 
@@ -48,7 +48,7 @@ class UserModel(Base):
     # ✅ RELATIONSHIPS
     role = relationship("Role", back_populates="users")
 
-    branch = relationship("BranchModel", back_populates="users")
+    major = relationship("MajorModel", back_populates="users")
     faculty = relationship("FacultyModel", back_populates="users")
     department = relationship("DepartmentModel", back_populates="users")
     posts = relationship(

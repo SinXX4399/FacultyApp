@@ -4,14 +4,14 @@ from app.schemas.Faculty import FacultyResponse
 
 
 # ---------------- CREATE ----------------
-class BranchCreate(BaseModel):
+class MajorCreate(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
     abbreviation: str = Field(..., min_length=1, max_length=20)
     faculty_id: int = Field(..., gt=0)
 
 
 # ---------------- RESPONSE (FULL) ----------------
-class BranchResponse(BaseModel):
+class MajorResponse(BaseModel):
     id: int
     name: str
     abbreviation: str
@@ -23,7 +23,7 @@ class BranchResponse(BaseModel):
 
 
 # ---------------- RESPONSE (LIGHTWEIGHT) ----------------
-class BranchSimpleResponse(BaseModel):
+class MajorSimpleResponse(BaseModel):
     id: int
     name: str
 
@@ -33,7 +33,7 @@ class BranchSimpleResponse(BaseModel):
 
 
 # ---------------- UPDATE ----------------
-class BranchUpdate(BaseModel):
+class MajorUpdate(BaseModel):
     name: Optional[str] = Field(None, min_length=1, max_length=100)
     abbreviation: Optional[str] = Field(None, min_length=1, max_length=20)
     faculty_id: Optional[int] = Field(None, gt=0)
